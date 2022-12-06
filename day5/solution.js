@@ -1,19 +1,10 @@
 import {readFileSync} from 'fs'
+import { createCrates } from './createCrate.js';
 
 const input = readFileSync('day5/data.txt', 'utf8').split('\n');
 
 
-const stacks = [
-  ['F', 'D', 'B', "Z", "T", 'J', 'R', 'N'],
-  ['R', 'S', 'N', 'J', 'H'],
-  ['C', 'R', 'N', 'J', 'G', 'Z', 'F', 'Q'],
-  ['F', 'V', 'N', 'G', 'R', 'T', 'Q'],
-  ['L', 'T', 'Q', 'F'],
-  ['Q', 'C', 'W', 'Z', 'B', 'R', 'G', 'N'],
-  ['F', 'C', 'L', 'S', 'N', 'H', "M"],
-  ['D', 'N', 'Q', 'M', 'T', 'J'],
-  ['P', 'G', 'S']
-]
+const stacks = createCrates() 
 
 const inputSplit = input.map(i => i.replace('from ', '').replace('to ', '').replace('move ', '').split(' '))
 
