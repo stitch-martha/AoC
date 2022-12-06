@@ -1,6 +1,6 @@
 import {readFileSync} from 'fs'
 
-const input = readFileSync('day5/data.txt', 'utf8').split('');
+const input = readFileSync('day6/data.txt', 'utf8').split('');
 
 function isNotDuplicate(arr) {
   return new Set(arr).size === arr.length
