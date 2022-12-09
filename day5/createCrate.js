@@ -10,8 +10,8 @@ let rows = input.map((line) => {
 const initialCrates = [[], [], [], [], [], [], [], [], []]
 
 export function createCrates() {
-  rows.forEach(row => row.forEach((letter, index) => letter !== '    ' && initialCrates[index].unshift(letter)))
-  return initialCrates
+  let crates = rows[0].map((_,i) => {
+    return rows.map((row) => row[i]).reverse();
+});
+return crates.map(col => col.filter(x => x !== '    '))
 }
-
-createCrates()
